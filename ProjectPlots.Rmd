@@ -1,0 +1,373 @@
+---
+title: "Document 2: Code"
+output: html_document
+date: "2025-04-10"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Packages
+
+```{r}
+library(ggplot2)
+library(patchwork)
+library(dplyr)
+library(gganimate)
+library(sf)
+library(magick)
+library(shiny)
+library(tidyr)
+library(usmap)
+library(plotly)
+
+```
+
+# Importing the data:
+
+```{r}
+
+#Using the Year and GMSL GIA Applied columns. GMSL stands for Global Mean Sea Level, and GIA stands for Global Isostatic Adjustment. GIA is a correction scientists apply when measuring sea level that helps account for changes in the land due to ancient glaciers melting that once weighed down the land. After this melting, Earth is now returning to its normal shape, causing land to rise and the ocean floor to fall in some areas. This movement can cause the sea level to be inaccurate, so that is why we use GIA to correct it.
+#source for explaining GIA: https://sealevel.colorado.edu/presentation/what-glacial-isostatic-adjustment-gia-and-why-do-you-correct-it
+sea_level_data = read.csv("sealeveldata.csv")
+sea_level_data = sea_level_data[,-c(1:9)]
+sea_level_data = sea_level_data[,-c(9:11)]
+colnames(sea_level_data) = c("year", "num_obs", "num_weighted_obs", "gmsl_no_gia", "st_dev_gmsl_no_gia", "smoothed_gmsl_no_gia", "gmsl_gia", "st_dev_gmsl_gia" )
+sea_level_data$year = as.numeric(sea_level_data$year)
+sea_level_data$gmsl_gia = as.numeric(sea_level_data$gmsl_gia)
+
+#This data shows the global average temperature anomaly between the years 1980 and 2025. Temperature anomaly is measuring the difference between the global temperature average and the long-term average baseline (which is the average global temperature between 1901-2000 in this data)
+temp_data = read.csv("tempdata.csv")
+colnames(temp_data) = c("Year", "Anomaly")
+temp_data = temp_data[-c(1,2,3,4),]
+temp_data$Year = as.numeric(temp_data$Year)
+temp_data$Anomaly = as.numeric(temp_data$Anomaly)
+
+#GHG ppm yearly average from 1980-now
+carbon_ppm_only <- read.csv("CO2_annmean_mlo.csv")
+carbon_ppm <- read.csv("CapeGrim_CO2.csv")
+carbon_ppm$Gas <- "CO2"
+methane_ppm <- read.csv("CapeGrim_CH4.csv")
+methane_ppm$Gas <- "CH4"
+nox_ppm <- read.csv("CapeGrim_N2O.csv")
+nox_ppm$Gas <- "N2O"
+
+ghg_data <- rbind(carbon_ppm, methane_ppm, nox_ppm)
+
+ghg_data$Ppm_ppb <- ifelse(
+  ghg_data$Gas %in% c("CH4", "N2O"), 
+  ghg_data$Ppm_ppb / 1000,  # Convert from ppb to ppm
+  ghg_data$Ppm_ppb  # Keep the value unchanged for other gases
+)
+
+ghg_avg <- ghg_data %>%
+  group_by(YYYY, Gas) %>%
+  summarise(Ppm_ppb = mean(Ppm_ppb, na.rm = TRUE)) %>%
+  ungroup()
+
+#US emissions by sector from 1990-2021
+em_sector <- read.csv("historical_emissions_world.csv")
+sec_em_modified <- em_sector %>%
+  filter(ISO == "WORLD") %>%
+  pivot_longer(
+    cols = starts_with("X"),
+    names_to = "Year",
+    names_prefix = "X",
+    values_to = "Emissions"
+  ) %>%
+  mutate(Year = as.integer(Year))
+
+#Radiative forcing of gases
+r_forcing <- read.csv("radiativeforcing.csv")
+
+#Storm event data from 1980 - 2024
+allStormEvents <- read.csv("CombinedStormEvents.csv")
+
+#heat waves data
+heatwaves <- read.csv("heat_waves.csv")
+heatwaves$Decade = seq(1960, 2020, by = 10)
+
+#chatgpt prompt: how can i fill in NA values for all states that are missing data for each year
+all_states <- unique(allStormEvents$STATE)
+all_years <- unique(allStormEvents$YEAR)
+complete_grid <- expand.grid(
+  STATE = all_states,
+  YEAR = all_years
+)
+
+#Finding the total deaths per state per year
+totalDeaths <- allStormEvents %>%
+  group_by(YEAR, STATE) %>%
+  summarize(Total_Deaths = sum(DEATHS_DIRECT + DEATHS_INDIRECT, na.rm = TRUE))
+
+totalDeaths1 <- complete_grid %>%
+  left_join(totalDeaths, by = c("YEAR", "STATE"))
+
+#shape file
+us_states <- us_map("states", include = state.abb) %>% 
+  st_as_sf()
+us_states$full = toupper(us_states$full)
+us_states_deaths <- us_states %>%
+  left_join(totalDeaths, by = c("full" = "STATE"))
+
+us_states_deaths2 <- us_states %>%
+  left_join(totalDeaths1, by = c("full" = "STATE"))
+
+#chatgpt prompt: i want to organize the number of deaths into categories: 0, 1-10, 11-50, 51-150, 151-300, 301-500, 500+
+us_states_deaths3 <- us_states_deaths2 %>%
+  mutate(death_category = case_when(
+    Total_Deaths == 0 ~ "0",
+    Total_Deaths >= 1 & Total_Deaths <= 10 ~ "1-10",
+    Total_Deaths >= 11 & Total_Deaths <= 50 ~ "11-50",
+    Total_Deaths >= 51 & Total_Deaths <= 150 ~ "51-150",
+    Total_Deaths >= 151 & Total_Deaths <= 300 ~ "151-300",
+    Total_Deaths >= 301 & Total_Deaths <= 500 ~ "301-500",
+    Total_Deaths > 500 ~ "500+",
+    TRUE ~ NA_character_
+  ))
+
+
+```
+
+# Plot 1: Rising Global Temperature Scatter Plot
+
+```{r}
+
+temp_plot <- ggplot(temp_data, aes(x = Year, y = Anomaly)) + geom_point(color = "darkblue") + scale_x_continuous(breaks = seq(1980, 2025, by = 5)) + geom_smooth(method = "lm", se = F, color = "#6BAED6") + scale_y_continuous(breaks = seq(0, max(temp_data$Anomaly), by=0.2)) + labs(title = "Average Global Temperature Anomaly\nbetween 1980 and 2025", x = "Year", y = "Temperature Anomaly (°C)") + theme_minimal() + theme(plot.title = element_text(hjust=0.5)) 
+
+temp_plot
+
+```
+
+# Plot 2: Rising Sea Level Line Graph
+
+```{r}
+
+sea_level_plot <- ggplot(sea_level_data, aes(x = year, y = gmsl_gia)) + geom_line(color = "darkblue") + scale_x_continuous(breaks = seq(1990, 2025, by = 5)) + scale_y_continuous(breaks = seq(-40, 80, by = 10)) + labs(x = "Year", y = "Sea Level Change (mm, GIA Applied)") + labs(title = "Global Mean Sea Level Variation (1993-2025)") + theme_minimal() + theme(plot.title = element_text(hjust=0.5)) 
+
+sea_level_plot
+
+```
+
+# Plot 3: GHG contribution to global warming (donut)
+
+```{r}
+
+#data acquired from https://www.epa.gov/climate-indicators/climate-change-indicators-climate-forcing#:~:text=In%202023%2C%20the%20Annual%20Greenhouse,1990%20(see%20Figure%201).
+
+sum = sum(r_forcing[45,2:7])
+forcing_carbon = r_forcing[45, 2] / sum
+forcing_methane = r_forcing[45, 3] / sum
+forcing_nox = r_forcing[45, 4] / sum
+forcing_halocarbons = sum(r_forcing[45, 5:7])/sum
+
+rf_percents = c(forcing_carbon, forcing_methane, forcing_nox, forcing_halocarbons)
+ghgs = c("Carbon", "Methane", "Nitrous Oxide", "Halocarbons")
+rf_vals = c(r_forcing[45, 2:4],sum(r_forcing[45, 5:7]))
+
+#How do i make a custom hover label on plotly that displays the RF value for each greenhouse gas with the percentage
+hover_text = paste0(
+  ghgs, 
+  "<br>RF Value: ", rf_vals, " W/m²",
+  "<br>Percentage: ", round(rf_percents * 100, 1), "%"
+)
+
+plot_ly(
+  labels = ghgs, 
+  values = rf_percents,
+  type = "pie",
+  hole = 0.4,
+  textinfo = "label+percent",
+  hoverinfo = "text",
+  hovertext = hover_text,
+  width = 600,
+  height = 600,
+  marker = list(colors = c("#08306B", "#2171B5", "#6BAED6", "#C6DBEF"))
+) %>%
+  layout(
+    title = list(
+      text = "Greenhouse Gas Contributions to Global Warming, measured by Radiative Forcing",
+      x = 0.5, 
+      y = 0.95, 
+      xanchor = "center", 
+      yanchor = "top"     
+    ),
+    legend = list(y = 0.75, xanchor = "left")
+  )
+
+```
+
+# Plot 4: GHG emissions on the rise (line graph facet grid)
+
+```{r}
+
+colors <- c("#4DB6AC", "#1E3A8A", "#FF69B4")
+
+co2_plot <- ggplot(ghg_avg, aes(x = YYYY, y = Ppm_ppb, color = Gas)) + geom_line(aes(linetype = Gas), size = 0.8) + facet_wrap(~ Gas, scales = "free_y") + labs(title = "Atmospheric Concentrations of Top 3 \nGreenhouse Gases Emitted by Human Activities (1976-2025)", y = "Average Concentration (ppm)", x = "Year") + theme_minimal() + theme(plot.title = element_text(hjust=0.5)) + scale_color_manual(values = colors)
+
+co2_plot
+
+```
+
+# Plot 5: CO2 emissions main causes (Tree Map, can be found on Tableau)
+
+# Plot 6: Heat Waves (Frequency bar graph)
+
+```{r}
+heatwaves_plot_freq <- ggplot(heatwaves, aes(x = Decade, y = Frequency..average.number.of.heat.waves.per.year.)) + geom_bar(stat = "identity", fill = "#6BAED6") + geom_smooth(method = "loess", se=F, color = "blue", size =2) + labs(title = "Frequency of Heatwaves by Decade", y = "Average Number of Heatwaves per Year") + theme_minimal() + theme(plot.title = element_text(hjust=0.5)) + scale_x_continuous(breaks = heatwaves$Decade, labels = paste0(heatwaves$Decade, "s"))
+
+heatwaves_plot_freq
+```
+
+# Plot 7: Heat Waves (Intensity scatter plot)
+
+```{r}
+heatwaves_plot_intensity <- ggplot(heatwaves, aes(x = Decade, y = Intensity..average.temperature.above.local.threshold.during.heat.waves.)) + geom_point(color = "darkblue") + geom_smooth(method = "lm", se=F, color = "#6BAED6") + labs(title = "Intensity of Heatwaves by Decade", y="Average Temperature Above Local\nThreshold during Heatwaves (°F)") + theme_minimal() + theme(plot.title = element_text(hjust=0.5)) + scale_x_continuous(breaks = heatwaves$Decade, labels = paste0(heatwaves$Decade, "s"))
+
+heatwaves_plot_intensity
+```
+
+# Plot 8: Heat Waves (Duration bar graph)
+
+```{r}
+
+heatwaves_plot_duration <- ggplot(heatwaves,aes(x = Decade, y = Duration..average.number.of.individual.heat.waves.)) + geom_bar(stat = "identity", fill = "#6BAED6") + geom_smooth(method = "loess", se=F, color = "blue", size = 2) + labs(title = "Duration of Heatwaves by Decade", y = "Average Duration of Individual Heatwaves (days)") + theme_minimal() + theme(plot.title = element_text(hjust=0.5)) + scale_x_continuous(breaks = heatwaves$Decade, labels = paste0(heatwaves$Decade, "s"))
+
+heatwaves_plot_duration
+
+```
+
+# Plot 9: Shiny App for Cost of Billion Dollar Disasters (tropical cyclones cost the most)
+
+```{r}
+
+ui <- fluidPage(
+  titlePanel("Cost of U.S. Weather Disasters Exceeding $1 BN in Damages from 1980 to 2025"),
+  sidebarLayout(
+    sidebarPanel(
+        selectInput("disasters", "What disaster(s) would you like to include?", choices = c("Drought" = "Drought.Cost", "Flooding" = "Flooding.Cost", "Freeze" = "Freeze.Cost", "Severe Storm" = "Severe.Storm.Cost", "Tropical Cyclone" = "Tropical.Cyclone.Cost", "Wildfire" = "Wildfire.Cost"), multiple = TRUE, selected = c("Drought" = "Drought.Cost", "Flooding" = "Flooding.Cost", "Freeze" = "Freeze.Cost", "Severe Storm" = "Severe.Storm.Cost", "Tropical Cyclone" = "Tropical.Cyclone.Cost", "Wildfire" = "Wildfire.Cost")),
+  checkboxInput("cpi", "Would you like to adjust for CPI?", value = TRUE),
+  sliderInput("year_range", "Select a year range:", min = 1980, max = 2025, value = c(1980, 2025), sep = "")
+    ),
+    mainPanel(
+      plotlyOutput("plot")
+    )
+  )
+)
+
+server <- function(input, output, session){
+  output$plot <- renderPlotly({
+    if(input$cpi){
+    data <- data_us_cost
+  }
+  else{
+    data <- data_us_cost_unadj
+  }
+  
+  filtered_data <- data %>%
+    filter(Year >= input$year_range[1], Year <= input$year_range[2]) %>%
+    select(Year, all_of(input$disasters)) %>%
+    pivot_longer(-Year, names_to = "Disaster", values_to = "Cost")
+  title_text = paste("Total Cost of U.S. Disasters With Damages \nExceeding $1BN (", input$year_range[1], "-", input$year_range[2], ")")
+  
+  plot_ly(data = filtered_data, x = ~Year, y = ~Cost, color = ~Disaster, colors = c("#08306B","#2171B5","#6BAED6", "#4B0082","#9E9AC8","#6A5ACD"), type = "bar", text = ~paste("Cost: $", Cost, "B"), hoverinfo = text) %>% 
+    layout(
+      barmode = "stack",
+      title = list(
+        text = title_text
+      )
+    )
+  })
+}
+
+shinyApp(ui, server)
+
+```
+
+# Plot 10: Shiny App for Heatmap of Frequency of Billion Dollar Disasters by Year/State
+
+```{r}
+
+ui1 <- fluidPage(
+  sidebarLayout(
+    sidebarPanel(
+      selectInput("decade", "Select a Decade:", choices = c("1980s" = 1980, "1990s" = 1990, "2000s" = 2000, "2010s" = 2010, "2020s" = 2020), selected = 1980),
+      selectInput("disasters", "What disaster(s) would you like to include?", choices = c("Drought" = "drought", "Flooding" = "flooding", "Freeze" = "freeze", "Severe Storm" = "severe.storm", "Tropical Cyclone" = "tropical.cyclone", "Wildfire" = "wildfire"), multiple = TRUE, selected = c("drought", "flooding", "freeze", "severe.storm", "tropical.cyclone", "wildfire"))
+    ),
+    mainPanel(
+      plotOutput("heatmap")
+    )
+  )
+)
+
+server1 <- function(input, output, session){
+  output$heatmap <- renderPlot({
+    data1 <- frequency_billion
+    decade_start <- as.numeric(input$decade)
+    decade_end <- as.numeric(input$decade) + ifelse(input$decade == 2020, 5, 9)
+  decades = seq(decade_start, decade_end)
+    filtered_data1 <- data1 %>% filter(year %in% decades) %>%
+    select(year, all_of(input$disasters)) %>%
+      pivot_longer(cols = all_of(input$disasters), names_to = "Disaster", values_to = "Frequency")
+    
+    total_disasters <- filtered_data1 %>%
+      group_by(year, Disaster) %>%
+      summarise(total_frequency = sum(Frequency))
+    
+    title_text = paste("Frequency of U.S. Disasters With Damages \nExceeding $1BN (", decade_start, "-", decade_end, ")")
+  
+    #ggplot(total_disasters) + geom_sf(aes(geometry = geom, fill = total_frequency)) + scale_fill_gradient(limits = c(0, 20), low = "lightgray", high = "darkblue", name = "Frequency") + labs(title = title_text) + theme(plot.title = element_text(size = 22, face="bold", hjust=0.5))
+    
+    ggplot(total_disasters, aes(x = year, y = Disaster, fill = total_frequency)) +
+      geom_tile(color = "white") +
+      scale_fill_gradient(low = "lightblue", high = "darkblue", name = "Frequency", limits = c(0,200)) +
+      labs(title = title_text, x = "Year", y = "Disaster Type") + scale_x_continuous(breaks = decades, labels = as.character(decades))+ theme_minimal() + theme(
+        plot.title = element_text(size = 20, face = "bold", hjust = 0.5),
+        axis.text.x = element_text(angle = 45, hjust = 1, size = 10),
+        axis.text.y = element_text(size = 12),
+        axis.title = element_text(size = 14),
+        legend.title = element_text(size = 12)
+      )
+  })
+}
+
+shinyApp(ui1, server1)
+
+```
+
+# Plot 11: Animated map showing the number of deaths to all storm events since 1980
+
+```{r}
+
+#prompt to find state geometry data: what r packages can i use that contain simple geometry for united states --> allowed me to figure out to use the usmap package to do this
+
+death_labels <- c("0", "1-10", "11-50", "51-150", "151-300", "301-500", "500+")
+death_colors <- brewer.pal(7, "Blues")
+
+map <- ggplot(us_states_deaths3) +
+  geom_sf(aes(geometry=geom, fill=death_category), color = "black") + 
+  scale_fill_manual(
+    values = death_colors,
+    breaks = c("0", "1-10", "11-50", "51-150", "151-300", "301-500", "500+"), 
+    labels = c("0", "1-10", "11-50", "51-150", "151-300", "301-500", "500+"),
+  na.value = "white",
+  name = "Number of Deaths") + 
+  coord_sf() +
+  theme(
+    plot.title = element_text(size = 16, face = "bold", hjust = 0.5),
+    plot.subtitle = element_text(size = 14, hjust = 0.5)
+  )
+
+animatedMap <- map + 
+  transition_manual(YEAR) + 
+  ease_aes('linear') + 
+  labs(title = "Total Deaths From All Storm Events by State in {current_frame}")
+
+finalMap <- animate(animatedMap, renderer = gifski_renderer(), fps=5)
+
+anim_save(filename="/Users/victorialovelace/Desktop/STAT3280/Project/Deathmap.gif", animation = finalMap)
+
+deathmap_gif <- image_read("/Users/victorialovelace/Desktop/STAT3280/Project/Deathmap1.gif")
+
+```

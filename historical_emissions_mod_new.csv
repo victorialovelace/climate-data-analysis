@@ -1,0 +1,257 @@
+"","ISO","Country","Data.source","Sector","Gas","Unit","Year","Emissions"
+"1","USA","United States","Climate Watch","Energy","CO2","MtCO₂e",2021,4565.38
+"2","USA","United States","Climate Watch","Energy","CO2","MtCO₂e",2020,4279.3
+"3","USA","United States","Climate Watch","Energy","CO2","MtCO₂e",2019,4776.55
+"4","USA","United States","Climate Watch","Energy","CO2","MtCO₂e",2018,4936.2
+"5","USA","United States","Climate Watch","Energy","CO2","MtCO₂e",2017,4778.69
+"6","USA","United States","Climate Watch","Energy","CO2","MtCO₂e",2016,4854.74
+"7","USA","United States","Climate Watch","Energy","CO2","MtCO₂e",2015,4950.36
+"8","USA","United States","Climate Watch","Energy","CO2","MtCO₂e",2014,5067.36
+"9","USA","United States","Climate Watch","Energy","CO2","MtCO₂e",2013,5055.39
+"10","USA","United States","Climate Watch","Energy","CO2","MtCO₂e",2012,4920.44
+"11","USA","United States","Climate Watch","Energy","CO2","MtCO₂e",2011,5141.12
+"12","USA","United States","Climate Watch","Energy","CO2","MtCO₂e",2010,5360.49
+"13","USA","United States","Climate Watch","Energy","CO2","MtCO₂e",2009,5126.69
+"14","USA","United States","Climate Watch","Energy","CO2","MtCO₂e",2008,5516.87
+"15","USA","United States","Climate Watch","Energy","CO2","MtCO₂e",2007,5690.73
+"16","USA","United States","Climate Watch","Energy","CO2","MtCO₂e",2006,5606.16
+"17","USA","United States","Climate Watch","Energy","CO2","MtCO₂e",2005,5707.22
+"18","USA","United States","Climate Watch","Energy","CO2","MtCO₂e",2004,5692.32
+"19","USA","United States","Climate Watch","Energy","CO2","MtCO₂e",2003,5615.55
+"20","USA","United States","Climate Watch","Energy","CO2","MtCO₂e",2002,5549.78
+"21","USA","United States","Climate Watch","Energy","CO2","MtCO₂e",2001,5706.56
+"22","USA","United States","Climate Watch","Energy","CO2","MtCO₂e",2000,5734.27
+"23","USA","United States","Climate Watch","Energy","CO2","MtCO₂e",1999,5568.68
+"24","USA","United States","Climate Watch","Energy","CO2","MtCO₂e",1998,5550.97
+"25","USA","United States","Climate Watch","Energy","CO2","MtCO₂e",1997,5504.67
+"26","USA","United States","Climate Watch","Energy","CO2","MtCO₂e",1996,5236.07
+"27","USA","United States","Climate Watch","Energy","CO2","MtCO₂e",1995,5079.84
+"28","USA","United States","Climate Watch","Energy","CO2","MtCO₂e",1994,5030.37
+"29","USA","United States","Climate Watch","Energy","CO2","MtCO₂e",1993,4960.22
+"30","USA","United States","Climate Watch","Energy","CO2","MtCO₂e",1992,4846.46
+"31","USA","United States","Climate Watch","Energy","CO2","MtCO₂e",1991,4774.58
+"32","USA","United States","Climate Watch","Energy","CO2","MtCO₂e",1990,4810.88
+"33","USA","United States","Climate Watch","Electricity/Heat","CO2","MtCO₂e",2021,1878
+"34","USA","United States","Climate Watch","Electricity/Heat","CO2","MtCO₂e",2020,1765.03
+"35","USA","United States","Climate Watch","Electricity/Heat","CO2","MtCO₂e",2019,1958.64
+"36","USA","United States","Climate Watch","Electricity/Heat","CO2","MtCO₂e",2018,2097.15
+"37","USA","United States","Climate Watch","Electricity/Heat","CO2","MtCO₂e",2017,2064.52
+"38","USA","United States","Climate Watch","Electricity/Heat","CO2","MtCO₂e",2016,2145.51
+"39","USA","United States","Climate Watch","Electricity/Heat","CO2","MtCO₂e",2015,2234.02
+"40","USA","United States","Climate Watch","Electricity/Heat","CO2","MtCO₂e",2014,2376.19
+"41","USA","United States","Climate Watch","Electricity/Heat","CO2","MtCO₂e",2013,2378.54
+"42","USA","United States","Climate Watch","Electricity/Heat","CO2","MtCO₂e",2012,2360.2
+"43","USA","United States","Climate Watch","Electricity/Heat","CO2","MtCO₂e",2011,2488.67
+"44","USA","United States","Climate Watch","Electricity/Heat","CO2","MtCO₂e",2010,2609.56
+"45","USA","United States","Climate Watch","Electricity/Heat","CO2","MtCO₂e",2009,2489.11
+"46","USA","United States","Climate Watch","Electricity/Heat","CO2","MtCO₂e",2008,2719.59
+"47","USA","United States","Climate Watch","Electricity/Heat","CO2","MtCO₂e",2007,2789.49
+"48","USA","United States","Climate Watch","Electricity/Heat","CO2","MtCO₂e",2006,2722.96
+"49","USA","United States","Climate Watch","Electricity/Heat","CO2","MtCO₂e",2005,2791.21
+"50","USA","United States","Climate Watch","Electricity/Heat","CO2","MtCO₂e",2004,2742.06
+"51","USA","United States","Climate Watch","Electricity/Heat","CO2","MtCO₂e",2003,2707.69
+"52","USA","United States","Climate Watch","Electricity/Heat","CO2","MtCO₂e",2002,2679.75
+"53","USA","United States","Climate Watch","Electricity/Heat","CO2","MtCO₂e",2001,2812.77
+"54","USA","United States","Climate Watch","Electricity/Heat","CO2","MtCO₂e",2000,2801.39
+"55","USA","United States","Climate Watch","Electricity/Heat","CO2","MtCO₂e",1999,2769.65
+"56","USA","United States","Climate Watch","Electricity/Heat","CO2","MtCO₂e",1998,2800.15
+"57","USA","United States","Climate Watch","Electricity/Heat","CO2","MtCO₂e",1997,2742.5
+"58","USA","United States","Climate Watch","Electricity/Heat","CO2","MtCO₂e",1996,2504.04
+"59","USA","United States","Climate Watch","Electricity/Heat","CO2","MtCO₂e",1995,2423.43
+"60","USA","United States","Climate Watch","Electricity/Heat","CO2","MtCO₂e",1994,2360.7
+"61","USA","United States","Climate Watch","Electricity/Heat","CO2","MtCO₂e",1993,2335.52
+"62","USA","United States","Climate Watch","Electricity/Heat","CO2","MtCO₂e",1992,2276.97
+"63","USA","United States","Climate Watch","Electricity/Heat","CO2","MtCO₂e",1991,2179.91
+"64","USA","United States","Climate Watch","Electricity/Heat","CO2","MtCO₂e",1990,2159.79
+"65","USA","United States","Climate Watch","Transportation","CO2","MtCO₂e",2021,1663.68
+"66","USA","United States","Climate Watch","Transportation","CO2","MtCO₂e",2020,1507.92
+"67","USA","United States","Climate Watch","Transportation","CO2","MtCO₂e",2019,1757.34
+"68","USA","United States","Climate Watch","Transportation","CO2","MtCO₂e",2018,1762.24
+"69","USA","United States","Climate Watch","Transportation","CO2","MtCO₂e",2017,1724.02
+"70","USA","United States","Climate Watch","Transportation","CO2","MtCO₂e",2016,1711.22
+"71","USA","United States","Climate Watch","Transportation","CO2","MtCO₂e",2015,1700.05
+"72","USA","United States","Climate Watch","Transportation","CO2","MtCO₂e",2014,1639.85
+"73","USA","United States","Climate Watch","Transportation","CO2","MtCO₂e",2013,1646.94
+"74","USA","United States","Climate Watch","Transportation","CO2","MtCO₂e",2012,1597.53
+"75","USA","United States","Climate Watch","Transportation","CO2","MtCO₂e",2011,1633.59
+"76","USA","United States","Climate Watch","Transportation","CO2","MtCO₂e",2010,1679.77
+"77","USA","United States","Climate Watch","Transportation","CO2","MtCO₂e",2009,1622.55
+"78","USA","United States","Climate Watch","Transportation","CO2","MtCO₂e",2008,1708.27
+"79","USA","United States","Climate Watch","Transportation","CO2","MtCO₂e",2007,1806.37
+"80","USA","United States","Climate Watch","Transportation","CO2","MtCO₂e",2006,1806.02
+"81","USA","United States","Climate Watch","Transportation","CO2","MtCO₂e",2005,1807.72
+"82","USA","United States","Climate Watch","Transportation","CO2","MtCO₂e",2004,1788.67
+"83","USA","United States","Climate Watch","Transportation","CO2","MtCO₂e",2003,1766.75
+"84","USA","United States","Climate Watch","Transportation","CO2","MtCO₂e",2002,1741.64
+"85","USA","United States","Climate Watch","Transportation","CO2","MtCO₂e",2001,1720.04
+"86","USA","United States","Climate Watch","Transportation","CO2","MtCO₂e",2000,1717.85
+"87","USA","United States","Climate Watch","Transportation","CO2","MtCO₂e",1999,1686.18
+"88","USA","United States","Climate Watch","Transportation","CO2","MtCO₂e",1998,1640.36
+"89","USA","United States","Climate Watch","Transportation","CO2","MtCO₂e",1997,1602.13
+"90","USA","United States","Climate Watch","Transportation","CO2","MtCO₂e",1996,1577.19
+"91","USA","United States","Climate Watch","Transportation","CO2","MtCO₂e",1995,1537.76
+"92","USA","United States","Climate Watch","Transportation","CO2","MtCO₂e",1994,1506.9
+"93","USA","United States","Climate Watch","Transportation","CO2","MtCO₂e",1993,1454.19
+"94","USA","United States","Climate Watch","Transportation","CO2","MtCO₂e",1992,1430.66
+"95","USA","United States","Climate Watch","Transportation","CO2","MtCO₂e",1991,1399.67
+"96","USA","United States","Climate Watch","Transportation","CO2","MtCO₂e",1990,1426.97
+"97","USA","United States","Climate Watch","Building","CO2","MtCO₂e",2021,524.11
+"98","USA","United States","Climate Watch","Building","CO2","MtCO₂e",2020,510.93
+"99","USA","United States","Climate Watch","Building","CO2","MtCO₂e",2019,550.59
+"100","USA","United States","Climate Watch","Building","CO2","MtCO₂e",2018,550.68
+"101","USA","United States","Climate Watch","Building","CO2","MtCO₂e",2017,497.9
+"102","USA","United States","Climate Watch","Building","CO2","MtCO₂e",2016,496.47
+"103","USA","United States","Climate Watch","Building","CO2","MtCO₂e",2015,512.54
+"104","USA","United States","Climate Watch","Building","CO2","MtCO₂e",2014,545.08
+"105","USA","United States","Climate Watch","Building","CO2","MtCO₂e",2013,528.01
+"106","USA","United States","Climate Watch","Building","CO2","MtCO₂e",2012,460.54
+"107","USA","United States","Climate Watch","Building","CO2","MtCO₂e",2011,522.21
+"108","USA","United States","Climate Watch","Building","CO2","MtCO₂e",2010,545.05
+"109","USA","United States","Climate Watch","Building","CO2","MtCO₂e",2009,551.36
+"110","USA","United States","Climate Watch","Building","CO2","MtCO₂e",2008,556.24
+"111","USA","United States","Climate Watch","Building","CO2","MtCO₂e",2007,549
+"112","USA","United States","Climate Watch","Building","CO2","MtCO₂e",2006,517.53
+"113","USA","United States","Climate Watch","Building","CO2","MtCO₂e",2005,571.93
+"114","USA","United States","Climate Watch","Building","CO2","MtCO₂e",2004,590.28
+"115","USA","United States","Climate Watch","Building","CO2","MtCO₂e",2003,605.74
+"116","USA","United States","Climate Watch","Building","CO2","MtCO₂e",2002,582.86
+"117","USA","United States","Climate Watch","Building","CO2","MtCO₂e",2001,581.69
+"118","USA","United States","Climate Watch","Building","CO2","MtCO₂e",2000,599.12
+"119","USA","United States","Climate Watch","Building","CO2","MtCO₂e",1999,567.35
+"120","USA","United States","Climate Watch","Building","CO2","MtCO₂e",1998,548.57
+"121","USA","United States","Climate Watch","Building","CO2","MtCO₂e",1997,600.06
+"122","USA","United States","Climate Watch","Building","CO2","MtCO₂e",1996,616.37
+"123","USA","United States","Climate Watch","Building","CO2","MtCO₂e",1995,580.04
+"124","USA","United States","Climate Watch","Building","CO2","MtCO₂e",1994,575.85
+"125","USA","United States","Climate Watch","Building","CO2","MtCO₂e",1993,585.57
+"126","USA","United States","Climate Watch","Building","CO2","MtCO₂e",1992,565.06
+"127","USA","United States","Climate Watch","Building","CO2","MtCO₂e",1991,555.18
+"128","USA","United States","Climate Watch","Building","CO2","MtCO₂e",1990,545.48
+"129","USA","United States","Climate Watch","Manufacturing/Construction","CO2","MtCO₂e",2021,445.76
+"130","USA","United States","Climate Watch","Manufacturing/Construction","CO2","MtCO₂e",2020,437.46
+"131","USA","United States","Climate Watch","Manufacturing/Construction","CO2","MtCO₂e",2019,439.05
+"132","USA","United States","Climate Watch","Manufacturing/Construction","CO2","MtCO₂e",2018,454.06
+"133","USA","United States","Climate Watch","Manufacturing/Construction","CO2","MtCO₂e",2017,429.41
+"134","USA","United States","Climate Watch","Manufacturing/Construction","CO2","MtCO₂e",2016,439.02
+"135","USA","United States","Climate Watch","Manufacturing/Construction","CO2","MtCO₂e",2015,433.88
+"136","USA","United States","Climate Watch","Manufacturing/Construction","CO2","MtCO₂e",2014,437.26
+"137","USA","United States","Climate Watch","Manufacturing/Construction","CO2","MtCO₂e",2013,434.89
+"138","USA","United States","Climate Watch","Manufacturing/Construction","CO2","MtCO₂e",2012,438.57
+"139","USA","United States","Climate Watch","Manufacturing/Construction","CO2","MtCO₂e",2011,435.69
+"140","USA","United States","Climate Watch","Manufacturing/Construction","CO2","MtCO₂e",2010,466.33
+"141","USA","United States","Climate Watch","Manufacturing/Construction","CO2","MtCO₂e",2009,407.54
+"142","USA","United States","Climate Watch","Manufacturing/Construction","CO2","MtCO₂e",2008,474.77
+"143","USA","United States","Climate Watch","Manufacturing/Construction","CO2","MtCO₂e",2007,486.01
+"144","USA","United States","Climate Watch","Manufacturing/Construction","CO2","MtCO₂e",2006,495.82
+"145","USA","United States","Climate Watch","Manufacturing/Construction","CO2","MtCO₂e",2005,477.33
+"146","USA","United States","Climate Watch","Manufacturing/Construction","CO2","MtCO₂e",2004,511.67
+"147","USA","United States","Climate Watch","Manufacturing/Construction","CO2","MtCO₂e",2003,485.42
+"148","USA","United States","Climate Watch","Manufacturing/Construction","CO2","MtCO₂e",2002,490.82
+"149","USA","United States","Climate Watch","Manufacturing/Construction","CO2","MtCO₂e",2001,540.01
+"150","USA","United States","Climate Watch","Manufacturing/Construction","CO2","MtCO₂e",2000,567.12
+"151","USA","United States","Climate Watch","Manufacturing/Construction","CO2","MtCO₂e",1999,499.36
+"152","USA","United States","Climate Watch","Manufacturing/Construction","CO2","MtCO₂e",1998,512.74
+"153","USA","United States","Climate Watch","Manufacturing/Construction","CO2","MtCO₂e",1997,506.73
+"154","USA","United States","Climate Watch","Manufacturing/Construction","CO2","MtCO₂e",1996,485.92
+"155","USA","United States","Climate Watch","Manufacturing/Construction","CO2","MtCO₂e",1995,486.8
+"156","USA","United States","Climate Watch","Manufacturing/Construction","CO2","MtCO₂e",1994,534.85
+"157","USA","United States","Climate Watch","Manufacturing/Construction","CO2","MtCO₂e",1993,532.42
+"158","USA","United States","Climate Watch","Manufacturing/Construction","CO2","MtCO₂e",1992,517.64
+"159","USA","United States","Climate Watch","Manufacturing/Construction","CO2","MtCO₂e",1991,566.88
+"160","USA","United States","Climate Watch","Manufacturing/Construction","CO2","MtCO₂e",1990,604.44
+"161","USA","United States","Climate Watch","Industrial Processes","CO2","MtCO₂e",2021,41.31
+"162","USA","United States","Climate Watch","Industrial Processes","CO2","MtCO₂e",2020,40.69
+"163","USA","United States","Climate Watch","Industrial Processes","CO2","MtCO₂e",2019,40.9
+"164","USA","United States","Climate Watch","Industrial Processes","CO2","MtCO₂e",2018,38.97
+"165","USA","United States","Climate Watch","Industrial Processes","CO2","MtCO₂e",2017,40.32
+"166","USA","United States","Climate Watch","Industrial Processes","CO2","MtCO₂e",2016,39.44
+"167","USA","United States","Climate Watch","Industrial Processes","CO2","MtCO₂e",2015,39.91
+"168","USA","United States","Climate Watch","Industrial Processes","CO2","MtCO₂e",2014,39.44
+"169","USA","United States","Climate Watch","Industrial Processes","CO2","MtCO₂e",2013,36.37
+"170","USA","United States","Climate Watch","Industrial Processes","CO2","MtCO₂e",2012,35.27
+"171","USA","United States","Climate Watch","Industrial Processes","CO2","MtCO₂e",2011,32.21
+"172","USA","United States","Climate Watch","Industrial Processes","CO2","MtCO₂e",2010,31.45
+"173","USA","United States","Climate Watch","Industrial Processes","CO2","MtCO₂e",2009,29.61
+"174","USA","United States","Climate Watch","Industrial Processes","CO2","MtCO₂e",2008,41.42
+"175","USA","United States","Climate Watch","Industrial Processes","CO2","MtCO₂e",2007,45.51
+"176","USA","United States","Climate Watch","Industrial Processes","CO2","MtCO₂e",2006,46.85
+"177","USA","United States","Climate Watch","Industrial Processes","CO2","MtCO₂e",2005,46.19
+"178","USA","United States","Climate Watch","Industrial Processes","CO2","MtCO₂e",2004,45.89
+"179","USA","United States","Climate Watch","Industrial Processes","CO2","MtCO₂e",2003,43.35
+"180","USA","United States","Climate Watch","Industrial Processes","CO2","MtCO₂e",2002,43.16
+"181","USA","United States","Climate Watch","Industrial Processes","CO2","MtCO₂e",2001,41.61
+"182","USA","United States","Climate Watch","Industrial Processes","CO2","MtCO₂e",2000,41.45
+"183","USA","United States","Climate Watch","Industrial Processes","CO2","MtCO₂e",1999,40.24
+"184","USA","United States","Climate Watch","Industrial Processes","CO2","MtCO₂e",1998,39.46
+"185","USA","United States","Climate Watch","Industrial Processes","CO2","MtCO₂e",1997,38.56
+"186","USA","United States","Climate Watch","Industrial Processes","CO2","MtCO₂e",1996,37.31
+"187","USA","United States","Climate Watch","Industrial Processes","CO2","MtCO₂e",1995,37.08
+"188","USA","United States","Climate Watch","Industrial Processes","CO2","MtCO₂e",1994,36.31
+"189","USA","United States","Climate Watch","Industrial Processes","CO2","MtCO₂e",1993,34.84
+"190","USA","United States","Climate Watch","Industrial Processes","CO2","MtCO₂e",1992,32.99
+"191","USA","United States","Climate Watch","Industrial Processes","CO2","MtCO₂e",1991,32.74
+"192","USA","United States","Climate Watch","Industrial Processes","CO2","MtCO₂e",1990,33.48
+"193","USA","United States","Climate Watch","Other Fuel Combustion","CO2","MtCO₂e",2021,37.72
+"194","USA","United States","Climate Watch","Other Fuel Combustion","CO2","MtCO₂e",2020,36.29
+"195","USA","United States","Climate Watch","Other Fuel Combustion","CO2","MtCO₂e",2019,39.19
+"196","USA","United States","Climate Watch","Other Fuel Combustion","CO2","MtCO₂e",2018,46.25
+"197","USA","United States","Climate Watch","Other Fuel Combustion","CO2","MtCO₂e",2017,45.46
+"198","USA","United States","Climate Watch","Other Fuel Combustion","CO2","MtCO₂e",2016,46.25
+"199","USA","United States","Climate Watch","Other Fuel Combustion","CO2","MtCO₂e",2015,48.12
+"200","USA","United States","Climate Watch","Other Fuel Combustion","CO2","MtCO₂e",2014,48.19
+"201","USA","United States","Climate Watch","Other Fuel Combustion","CO2","MtCO₂e",2013,50.15
+"202","USA","United States","Climate Watch","Other Fuel Combustion","CO2","MtCO₂e",2012,46.1
+"203","USA","United States","Climate Watch","Other Fuel Combustion","CO2","MtCO₂e",2011,47.95
+"204","USA","United States","Climate Watch","Other Fuel Combustion","CO2","MtCO₂e",2010,51.34
+"205","USA","United States","Climate Watch","Other Fuel Combustion","CO2","MtCO₂e",2009,50.07
+"206","USA","United States","Climate Watch","Other Fuel Combustion","CO2","MtCO₂e",2008,53.57
+"207","USA","United States","Climate Watch","Other Fuel Combustion","CO2","MtCO₂e",2007,55.8
+"208","USA","United States","Climate Watch","Other Fuel Combustion","CO2","MtCO₂e",2006,60.08
+"209","USA","United States","Climate Watch","Other Fuel Combustion","CO2","MtCO₂e",2005,54.97
+"210","USA","United States","Climate Watch","Other Fuel Combustion","CO2","MtCO₂e",2004,56.03
+"211","USA","United States","Climate Watch","Other Fuel Combustion","CO2","MtCO₂e",2003,45.09
+"212","USA","United States","Climate Watch","Other Fuel Combustion","CO2","MtCO₂e",2002,50.34
+"213","USA","United States","Climate Watch","Other Fuel Combustion","CO2","MtCO₂e",2001,47.59
+"214","USA","United States","Climate Watch","Other Fuel Combustion","CO2","MtCO₂e",2000,44.34
+"215","USA","United States","Climate Watch","Other Fuel Combustion","CO2","MtCO₂e",1999,41.28
+"216","USA","United States","Climate Watch","Other Fuel Combustion","CO2","MtCO₂e",1998,43.56
+"217","USA","United States","Climate Watch","Other Fuel Combustion","CO2","MtCO₂e",1997,47.41
+"218","USA","United States","Climate Watch","Other Fuel Combustion","CO2","MtCO₂e",1996,46.95
+"219","USA","United States","Climate Watch","Other Fuel Combustion","CO2","MtCO₂e",1995,45.81
+"220","USA","United States","Climate Watch","Other Fuel Combustion","CO2","MtCO₂e",1994,45.77
+"221","USA","United States","Climate Watch","Other Fuel Combustion","CO2","MtCO₂e",1993,45
+"222","USA","United States","Climate Watch","Other Fuel Combustion","CO2","MtCO₂e",1992,47.37
+"223","USA","United States","Climate Watch","Other Fuel Combustion","CO2","MtCO₂e",1991,64.05
+"224","USA","United States","Climate Watch","Other Fuel Combustion","CO2","MtCO₂e",1990,66.32
+"225","USA","United States","Climate Watch","Land-Use Change and Forestry","CO2","MtCO₂e",2021,-221.46
+"226","USA","United States","Climate Watch","Land-Use Change and Forestry","CO2","MtCO₂e",2020,-221.46
+"227","USA","United States","Climate Watch","Land-Use Change and Forestry","CO2","MtCO₂e",2019,-221.45
+"228","USA","United States","Climate Watch","Land-Use Change and Forestry","CO2","MtCO₂e",2018,-221.59
+"229","USA","United States","Climate Watch","Land-Use Change and Forestry","CO2","MtCO₂e",2017,-221.71
+"230","USA","United States","Climate Watch","Land-Use Change and Forestry","CO2","MtCO₂e",2016,-221.68
+"231","USA","United States","Climate Watch","Land-Use Change and Forestry","CO2","MtCO₂e",2015,-409.17
+"232","USA","United States","Climate Watch","Land-Use Change and Forestry","CO2","MtCO₂e",2014,-409.13
+"233","USA","United States","Climate Watch","Land-Use Change and Forestry","CO2","MtCO₂e",2013,-409.07
+"234","USA","United States","Climate Watch","Land-Use Change and Forestry","CO2","MtCO₂e",2012,-408.95
+"235","USA","United States","Climate Watch","Land-Use Change and Forestry","CO2","MtCO₂e",2011,-408.9
+"236","USA","United States","Climate Watch","Land-Use Change and Forestry","CO2","MtCO₂e",2010,-391.85
+"237","USA","United States","Climate Watch","Land-Use Change and Forestry","CO2","MtCO₂e",2009,-391.85
+"238","USA","United States","Climate Watch","Land-Use Change and Forestry","CO2","MtCO₂e",2008,-391.82
+"239","USA","United States","Climate Watch","Land-Use Change and Forestry","CO2","MtCO₂e",2007,-391.76
+"240","USA","United States","Climate Watch","Land-Use Change and Forestry","CO2","MtCO₂e",2006,-391.7
+"241","USA","United States","Climate Watch","Land-Use Change and Forestry","CO2","MtCO₂e",2005,-391.65
+"242","USA","United States","Climate Watch","Land-Use Change and Forestry","CO2","MtCO₂e",2004,-391.6
+"243","USA","United States","Climate Watch","Land-Use Change and Forestry","CO2","MtCO₂e",2003,-391.56
+"244","USA","United States","Climate Watch","Land-Use Change and Forestry","CO2","MtCO₂e",2002,-391.56
+"245","USA","United States","Climate Watch","Land-Use Change and Forestry","CO2","MtCO₂e",2001,-391.57
+"246","USA","United States","Climate Watch","Land-Use Change and Forestry","CO2","MtCO₂e",2000,-408.67
+"247","USA","United States","Climate Watch","Land-Use Change and Forestry","CO2","MtCO₂e",1999,-408.76
+"248","USA","United States","Climate Watch","Land-Use Change and Forestry","CO2","MtCO₂e",1998,-408.86
+"249","USA","United States","Climate Watch","Land-Use Change and Forestry","CO2","MtCO₂e",1997,-408.93
+"250","USA","United States","Climate Watch","Land-Use Change and Forestry","CO2","MtCO₂e",1996,-408.9
+"251","USA","United States","Climate Watch","Land-Use Change and Forestry","CO2","MtCO₂e",1995,-408.85
+"252","USA","United States","Climate Watch","Land-Use Change and Forestry","CO2","MtCO₂e",1994,-409.08
+"253","USA","United States","Climate Watch","Land-Use Change and Forestry","CO2","MtCO₂e",1993,-408.93
+"254","USA","United States","Climate Watch","Land-Use Change and Forestry","CO2","MtCO₂e",1992,-408.78
+"255","USA","United States","Climate Watch","Land-Use Change and Forestry","CO2","MtCO₂e",1991,-408.78
+"256","USA","United States","Climate Watch","Land-Use Change and Forestry","CO2","MtCO₂e",1990,-408.78

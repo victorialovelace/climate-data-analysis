@@ -1,0 +1,13 @@
+name: DisasterFrequency
+title: DisasterFrequency
+username: victorialovelace
+account: victorialovelace
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 14542760
+bundleId: 10128205
+url: https://victorialovelace.shinyapps.io/DisasterFrequency/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: CapeGrim_CH4.csv|CapeGrim_CO2.csv|CapeGrim_N2O.csv|ch4_annmean_gl.csv|co2_annmean_mlo.csv|co2_annmean_mlo.numbers|co2_gr_mlo.csv|CombinedStormEvents.csv|combiningstormevents.R|concentrations|Deathmap.gif|Deathmap1.gif|dl.csv|FinalProject.html|FinalProject.Rmd|ghg_graph.png|ghg-concentrations_fig-3.numbers|heat_waves.csv|historical_emissions_mod_new.csv|historical_emissions_world_mod.csv|historical_emissions_world.csv|n2o_annmean_gl.csv|NRI_Table_Counties/NRI_HazardInfo.csv|NRI_Table_Counties/NRI_metadata_March2023.docx|NRI_Table_Counties/NRI_metadata_March2023.xml|NRI_Table_Counties/NRI_Table_Counties.csv|NRI_Table_Counties/NRIDataDictionary.csv|ProjectPlots.Rmd|radiativeforcing.csv|sea_level_graph.png|sealevel|sealeveldata.csv|sf6_annmean_gl.csv|ShinyCost.R|state-cost-data.csv|state-freq-data 2.numbers|state-freq-data.csv|temp_graph.png|tempdata.csv|time-series-US-cost-1980-2025-unadj.csv|time-series-US-cost-1980-2025.csv|US-climatology-data.csv|US-probability-data.csv

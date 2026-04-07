@@ -1,0 +1,12 @@
+name: CostShiny
+title: CostShiny
+username: victorialovelace
+account: victorialovelace
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 14542812
+bundleId: 10134966
+url: https://victorialovelace.shinyapps.io/CostShiny/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
