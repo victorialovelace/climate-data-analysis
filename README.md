@@ -20,7 +20,7 @@ This project investigates three research questions:
 ## Files
 - `FinalProject.Rmd` — R Markdown source code with all analysis and visualizations
 - `FinalProject.html` — rendered HTML output of the full report
-- `Explanation_and_Citations.pdf` — methodology, design decisions, and citations
+- `ChoicesCitations.pdf` — methodology, design decisions, and citations
 
 
 ## Data Sources
