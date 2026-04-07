@@ -8,7 +8,7 @@ This project investigates three research questions:
 2. Have the intensity, cost, and frequency of extreme weather events increased?
 3. Have deaths from extreme weather increased over time?
 
-## Tools & Technologies
+## Tools Used
 - R (plotly, dplyr, ggplot2)
 - Tableau
 - R Shiny
@@ -16,6 +16,12 @@ This project investigates three research questions:
 ## Interactive Apps
 - [Billion-Dollar Disaster Costs by Type](https://victorialovelace.shinyapps.io/CostShiny/)
 - [Billion-Dollar Disaster Frequency by Type](https://victorialovelace.shinyapps.io/FrequencyShiny/)
+
+## Files
+- `FinalProject.Rmd` — R Markdown source code with all analysis and visualizations
+- `FinalProject.html` — rendered HTML output of the full report
+- `Explanation_and_Citations.pdf` — methodology, design decisions, and citations
+
 
 ## Data Sources
 - NASA Global Temperature Data
